@@ -34,6 +34,11 @@ const argv = yargs
     default: false,
     describe: 'run a GUI chrome instead of headless mode',
   })
+  .option('r', {
+    alias: 'rearrange',
+    default: false,
+    describe: 'rearrange icons Order by name',
+  })
   .argv;
 
 pipeline({
@@ -43,4 +48,5 @@ pipeline({
   outputDir: argv.o,
   forceOverride: argv.f,
   visible: argv.visible,
+  rearrange: argv.r,
 });
